@@ -1,6 +1,10 @@
 ;; Global Setup
 (add-to-list 'load-path "~/.emacs.d" t)
 
+;; Enable CUA mode but just for the rectangular selection features.
+(setq cua-enable-cua-keys nil)
+(cua-mode t)
+
 ;; UI Tweaks
 (menu-bar-mode 0)
 (show-paren-mode 1)
