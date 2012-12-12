@@ -1,5 +1,6 @@
 ;; Global Setup
 (add-to-list 'load-path "~/.emacs.d" t)
+(cua-mode t)
 
 ;; UI Tweaks
 (menu-bar-mode 0)
