@@ -11,6 +11,12 @@
 (load "color-theme.el")
 (load "zenburn.el")
 
+;; Integration with ack-grep
+(autoload 'ack-same "full-ack" nil t)
+(autoload 'ack "full-ack" nil t)
+(autoload 'ack-find-same-file "full-ack" nil t)
+(autoload 'ack-find-file "full-ack" nil t)
+
 ;; Go Language Support
 (require 'go-mode-load)
 
