@@ -31,6 +31,7 @@
 (add-hook 'c-mode-common-hook
   (lambda()
     (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; Backup File Shenanigans
 (setq backup-directory-alist
