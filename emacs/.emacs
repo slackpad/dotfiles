@@ -21,6 +21,7 @@
 (require 'go-mode-load)
 
 ;; Code Writing OCD Features
+(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace 1)
 (setq column-number-mode t)
