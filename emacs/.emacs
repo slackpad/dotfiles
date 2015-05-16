@@ -46,18 +46,14 @@
 
 ;; Go Setup
 (add-hook 'go-mode-hook (lambda () (interactive) (column-marker-1 80)))
+(add-hook 'go-mode-hook (lambda () (local-set-key (kbd "M-.") #'godef-jump)))
 
 ;; C/C++ Setup
 (add-hook 'c-mode-common-hook (lambda () (interactive) (column-marker-1 80)))
-(setq c-default-style
-  `((c-mode . "stroustrup") (c++-mode . "stroustrup")))
-(add-hook 'c-mode-common-hook
-  (lambda()
-    (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+(setq c-default-style `((c-mode . "stroustrup") (c++-mode . "stroustrup")))
+(add-hook 'c-mode-common-hook(lambda() (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; Backup File Shenanigans
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
