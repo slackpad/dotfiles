@@ -39,16 +39,17 @@
 
 ;; Code Writing OCD Features
 (setq-default indent-tabs-mode nil)
-(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
 (setq-default show-trailing-whitespace 1)
 (setq column-number-mode t)
 (load "column-marker.el")
 
 ;; Go Setup
+(add-hook 'go-mode-hook 'flyspell-prog-mode)
 (add-hook 'go-mode-hook (lambda () (interactive) (column-marker-1 80)))
 (add-hook 'go-mode-hook (lambda () (local-set-key (kbd "M-.") #'godef-jump)))
 
 ;; C/C++ Setup
+(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
 (add-hook 'c-mode-common-hook (lambda () (interactive) (column-marker-1 80)))
 (setq c-default-style `((c-mode . "stroustrup") (c++-mode . "stroustrup")))
 (add-hook 'c-mode-common-hook(lambda() (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
