@@ -55,6 +55,9 @@
 (add-hook 'c-mode-common-hook(lambda() (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; JavaScript Setup
+(setq js-indent-level 2)
+
 ;; Backup File Shenanigans
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
