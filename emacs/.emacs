@@ -47,6 +47,7 @@
 (add-hook 'go-mode-hook 'flyspell-prog-mode)
 (add-hook 'go-mode-hook (lambda () (interactive) (column-marker-1 80)))
 (add-hook 'go-mode-hook (lambda () (local-set-key (kbd "M-.") #'godef-jump)))
+(add-hook 'before-save-hook #'gofmt-before-save)
 
 ;; C/C++ Setup
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
@@ -57,6 +58,10 @@
 
 ;; JavaScript Setup
 (setq js-indent-level 2)
+
+;; HTML Setup
+(dolist (hook '(html-mode-hook))
+      (add-hook hook (lambda () (flyspell-mode 1))))
 
 ;; Backup File Shenanigans
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
