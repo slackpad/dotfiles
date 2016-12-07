@@ -44,10 +44,13 @@
 (load "column-marker.el")
 
 ;; Go Setup
+(require 'go-guru)
 (add-hook 'go-mode-hook 'flyspell-prog-mode)
 (add-hook 'go-mode-hook (lambda () (interactive) (column-marker-1 80)))
-(add-hook 'go-mode-hook (lambda () (local-set-key (kbd "M-.") #'godef-jump)))
+(add-hook 'go-mode-hook (lambda () (local-set-key (kbd "M-.") #'go-guru-definition)))
+(add-hook 'go-mode-hook (lambda () (local-set-key (kbd "M-*") #'pop-tag-mark)))
 (add-hook 'before-save-hook #'gofmt-before-save)
+(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
 ;; C/C++ Setup
 (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
