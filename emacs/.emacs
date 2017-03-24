@@ -38,6 +38,7 @@
 (autoload 'ack-find-file "full-ack" nil t)
 
 ;; Code Writing OCD Features
+(global-git-gutter-mode +1)
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace 1)
 (setq column-number-mode t)
@@ -104,3 +105,16 @@
     (compilation-start command 'grep-mode))
   (if (eq next-error-last-buffer (current-buffer))
    (setq default-directory dir))))))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (git-gutter go-guru))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
