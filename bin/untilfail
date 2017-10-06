@@ -1,5 +1,9 @@
 #!/bin/bash
-$@
-while [ $? -eq 0 ]; do
+TRIES=0
+RESULT=0
+while [ $RESULT -eq 0 ]; do
+    let TRIES=TRIES+1
     $@
+    RESULT=$?
+    echo "Try $TRIES returned $RESULT"
 done
