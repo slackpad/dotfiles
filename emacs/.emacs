@@ -71,6 +71,9 @@
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
+;; Git Setup
+(require `git)
+
 ;; Better git-grep (http://lethalman.blogspot.com/2014/05/grep-in-git-with-emacs.html)
 (defun git-grep (regexp dir)
   (interactive
