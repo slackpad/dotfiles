@@ -24,12 +24,23 @@
       (setq the-plist (cddr the-plist)))
   alist))
 
+;; Sticky Window Mode
+(define-minor-mode sticky-buffer-mode "Make the current window always display
+    this buffer."  nil " sticky" nil (set-window-dedicated-p (selected-window)
+    sticky-buffer-mode))
+
 ;; UI Tweaks
+(windmove-default-keybindings)
 (menu-bar-mode 0)
 (show-paren-mode 1)
 (load "color-theme.el")
 (load "zenburn.el")
 (zenburn)
+
+;; HashiCorp-ish Build Systems
+(global-set-key (kbd "C-x \\") `recompile)
+(global-set-key (kbd "C-x C-\\") `kill-compilation)
+(setq compile-command "make dev")
 
 ;; Integration with ack-grep
 (autoload 'ack-same "full-ack" nil t)
