@@ -31,6 +31,10 @@
 
 ;; UI Tweaks
 (windmove-default-keybindings)
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 (menu-bar-mode 0)
 (show-paren-mode 1)
 (load "color-theme.el")
