@@ -58,6 +58,7 @@
 (setq-default show-trailing-whitespace 1)
 (setq column-number-mode t)
 (load "column-marker.el")
+(setq compilation-scroll-output 'first-error)
 
 ;; Go Setup
 (require 'go-guru)
