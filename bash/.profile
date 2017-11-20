@@ -32,9 +32,9 @@ function resetcolor() {
 }
 
 function bashprompt() {
+    local last_status=$?
     local failure="✘"
     local success="✔"
-    local last_status=$?
     if [[ "$last_status" != "0" ]]; then
         last_status="$(color 5)$failure$(resetcolor)"
     else
