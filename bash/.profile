@@ -36,7 +36,7 @@ function bashprompt() {
     local failure="✘"
     local success="✔"
     if [[ "$last_status" != "0" ]]; then
-        last_status="$(color 5)$failure$(resetcolor)"
+        last_status="$(color 1)$failure$(resetcolor)"
     else
         last_status="$(color 2)$success$(resetcolor)"
     fi
