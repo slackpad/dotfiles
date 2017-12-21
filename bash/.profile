@@ -1,8 +1,8 @@
 export PROJECT_DIR=/Users/james/projects
 export GOPATH=$PROJECT_DIR/_go
+export PYTHONPATH=/Users/james/Library/Python/2.7/lib/python/site-packages
 export ALTERNATE_EDITOR=""
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export PATH="$HOME/bin:$GOPATH/bin:$PATH:/usr/local/sbin"
+export PATH=$HOME/bin:$GOPATH/bin:$PATH:/Users/james/Library/Python/2.7/bin
 
 alias bt="cd $PROJECT_DIR"
 alias ll="ls -la"
